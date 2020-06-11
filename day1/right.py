@@ -9,7 +9,7 @@ Bonus: Can you do this in one pass?
 
 # O(n) time and space complexity
 def do_numbers_add_up(numbers, k):
-    # I had to such check as numbers.index(k-num) != idx:
+    # I had to add such check as numbers.index(k-num) != idx:
     # for cases when k - num is present in the list
     # but it actually is the num (current iteration list element)
     # e.g. k = 20, num = 10, k - num = 10, 10 == num is True
