@@ -26,6 +26,10 @@ if __name__ == '__main__':
     test_numbers_3 = [10, 15, 3, 7]
     test_k_3 = 19
 
+    test_numbers_4 = [10, 15, 3, 7]
+    test_k_4 = 20
+
     print(do_numbers_add_up(test_numbers_1, test_k_1))  # True
     print(do_numbers_add_up(test_numbers_2, test_k_2))  # True
     print(do_numbers_add_up(test_numbers_3, test_k_3))  # False
+    print(do_numbers_add_up(test_numbers_4, test_k_4))  # False
