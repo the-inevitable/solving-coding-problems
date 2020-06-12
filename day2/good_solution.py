@@ -14,6 +14,7 @@ def solution(numbers):
     return [int(product_list * (num**-1)) for num in numbers]
 
 
+# Returns the product of all elements in a list.
 def list_product(lst):
     res = 1
     for n in lst:
