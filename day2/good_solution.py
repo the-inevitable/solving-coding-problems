@@ -10,11 +10,15 @@ If our input was [3, 2, 1], the expected output would be [2, 3, 6].
 # Answer often lies in the test input and output data.
 # O(N) time and O(1) space
 def solution(numbers):
-    prod = 1
-    for i in numbers:
-        prod = prod * i
+    product_list = list_product(numbers)
+    return [int(product_list * (num**-1)) for num in numbers]
 
-    return [prod * (n**-1) for n in numbers]
+
+def list_product(lst):
+    res = 1
+    for n in lst:
+        res = res * n
+    return res
 
 
 if __name__ == '__main__':
