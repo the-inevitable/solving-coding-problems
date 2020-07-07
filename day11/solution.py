@@ -10,16 +10,19 @@ Given the string "([)]" or "((()", you should return false.
 """
 
 
-def solution(s):
+def solution1(s):
     brackets = {'(': ')', '{': '}', '[': ']'}
-    stack = [None]
+    stack = []
     for char in s:
-        if char in brackets.values() and char != brackets.get(stack.pop()):
-            return False
-        elif char in brackets.keys():
+        if char in brackets.keys():
             stack.append(char)
+        else:
+            if not stack:
+                return False
+            elif char != brackets.get(stack.pop()):
+                return False
     # Will return True only if every appended element was popped out.
-    return len(stack) == 1
+    return False if stack else True
 
 
 if __name__ == '__main__':
@@ -27,6 +30,6 @@ if __name__ == '__main__':
     test_s2 = '([)]'
     test_s3 = '((()'
 
-    print(solution(test_s1))  # True
-    print(solution(test_s2))  # False
-    print(solution(test_s3))  # False
+    print(solution1(test_s1))  # True
+    print(solution1(test_s2))  # False
+    print(solution1(test_s3))  # False
